@@ -1,0 +1,11 @@
+<div class="no-chat" *ngIf="!c.currentChat">
+  <p>Please select a chat to start messaging</p>
+</div>
+<div class="chat" *ngIf="c.currentChat" #chat [ngClass]="{'loading': loading}">
+  <div class="messages">
+    <div class="message" *ngFor="let message of c.messages" [ngClass]="{'self': message.self}">
+      <app-message [message]="message" [read]="isRead(message)"></app-message>
+    </div>
+  </div>
+</div>
+<app-message-bar *ngIf="c.currentChat" [chat]="c.currentChat"></app-message-bar>

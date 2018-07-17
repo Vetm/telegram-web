@@ -1,0 +1,43 @@
+<div class="login">
+  <div class="head">
+  </div>
+  <div class="content">
+    <div class="form">
+      <div class="form-head">
+        <div class="title">
+        <img src="../../assets/favicon/android-chrome-192x192.png"><h1>Telegram</h1>
+        </div>
+
+        <div class="next" (click)="next()">
+          <span>Next</span><mat-icon>keyboard_arrow_right</mat-icon>
+        </div>
+      </div>
+      <div class="form-content">
+        <div class="page page-1" *ngIf="!codeRequested">
+          <mat-card>
+            <h4 mat-card-title>Sign in</h4>
+            <p mat-card-subtitle>Please enter your full phone number incl. country code.</p>
+            <mat-form-field>
+              <input matInput [(ngModel)]="number" (keyup.ENTER)="next()" placeholder="Phone number">
+            </mat-form-field>
+          </mat-card>
+        </div>
+        <div class="page page-2" *ngIf="codeRequested">
+          <mat-card>
+            <h4 mat-card-title>{{number}}</h4>
+            <p mat-card-subtitle>We've sent the code to the Telegram app on your other device. Please enter the code below.</p>
+            <mat-form-field>
+              <input matInput [(ngModel)]="code" (keyup.ENTER)="next()" placeholder="Enter your code">
+            </mat-form-field>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--<input [(ngModel)]="number">
+<button (click)="requestCode(number)">get code</button>
+<input [(ngModel)]="code">
+<button (click)="authorizeWithCode(code)">authorize</button>
+-->

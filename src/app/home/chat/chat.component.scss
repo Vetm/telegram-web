@@ -1,0 +1,39 @@
+@import '../../variables';
+
+.chat {
+  @include content-height($message-bar-height);
+}
+
+.no-chat {
+  @include content-height();
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  p {
+    opacity: 0.6;
+  }
+}
+
+.chat, .no-chat {
+  transition: $transition-opacity;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 15px;
+  opacity: 1;
+  &.loading {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+
+  .message {
+    align-self: flex-start;
+    &.self {
+      align-self: flex-end;
+    }
+  }
+}

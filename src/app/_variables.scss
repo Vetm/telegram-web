@@ -1,0 +1,57 @@
+$chats-width: 350px;
+
+$primary50: #EAEEF4;
+$primary100: #CCD6E3;
+$primary200: #AABAD1;
+$primary300: #879EBE;
+$primary400: #6E8AB0;
+$primary500: #5475a2;
+$primary600: #4D6D9A;
+$primary700: #436290;
+$primary800: #3A5886;
+$primary900: #294575;
+$primaryA100: #BAD2FF;
+$primaryA200: #87B1FF;
+$primaryA400: #548FFF;
+$primaryA700: #3B7FFF;
+
+$message-bar-height: 50px;
+
+// Mixins //
+@mixin content-height($space: 0px) {
+  height: calc(100vh - 64px - #{$space});
+  @media (max-width: 599px) {
+    height: calc(100vh - 56px - #{$space});
+  }
+}
+
+@mixin force-size($size) {
+  height: $size;
+  width: $size;
+  min-height: $size;
+  min-width: $size;
+}
+
+// Animations //
+$transition-opacity: opacity 0.1s cubic-bezier(.25, .8, .25, 1);
+
+@mixin fade-in() {
+  animation: fade-in 0.3s cubic-bezier(.25, .8, .25, 1);
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade-in {
+  0% {opacity: 0}
+100% {opacity: 1}
+}
+
+@mixin fade-out() {
+  animation: fade-out 0.3s cubic-bezier(.25, .8, .25, 1);
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade-out {
+  0% {opacity: 1}
+  30% {opacity: 1}
+  100% {opacity: 0}
+}

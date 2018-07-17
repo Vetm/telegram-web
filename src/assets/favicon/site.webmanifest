@@ -1,0 +1,19 @@
+{
+    "name": "Telegram Web",
+    "short_name": "Telegram Web",
+    "icons": [
+        {
+            "src": "/assets/favicon/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/favicon/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#5475a2",
+    "background_color": "#5475a2",
+    "display": "standalone"
+}

@@ -1,0 +1,41 @@
+@font-face {
+  font-family: "Noto Color Emoji";
+  src: url("/assets/fonts/NotoColorEmoji.ttf");
+}
+
+@font-face {
+  font-family: "Noto Emoji";
+  src: url("/assets/fonts/NotoEmoji-Regular.ttf");
+}
+
+body {
+  margin: 0;
+}
+
+body, html {
+  height: 100%;
+}
+
+* {
+  font-family: 'Roboto', "Noto Color Emoji", "Noto Emoji", sans-serif;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
+a {
+  outline: none!important;
+}
+
+*::-webkit-scrollbar {
+  width: 0.4em;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: #edf1f1;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #bcc9d3;
+  //outline: 1px solid #bcc9d3;
+}

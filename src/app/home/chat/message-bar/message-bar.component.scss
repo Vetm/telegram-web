@@ -1,0 +1,45 @@
+@import '../../../variables';
+
+.message-bar {
+  height: $message-bar-height;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  padding: 0 5px;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+
+  .emoji {
+    display: flex;
+  }
+
+  .message-input {
+    width: 100%;
+    padding: 0 10px;
+    input {
+      background-color: transparent;
+      width: 100%;
+      border: none;
+    }
+  }
+
+  .actions {
+    display: flex;
+    flex-direction: row;
+  }
+
+  mat-icon, /deep/ mat-icon {
+    $size: 29px;
+    font-size: $size;
+    width: $size;
+    height: $size;
+    opacity: 0.5;
+    margin: 4px;
+    transition: opacity 0.3s cubic-bezier(.25,.8,.25,1);
+    &:hover {
+      opacity: 0.7;
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+<div class="message-bar">
+  <div class="emoji">
+    <app-emoji-picker (emoji)="message = message + $event"></app-emoji-picker>
+  </div>
+  <div class="message-input">
+    <input placeholder="Write a message…" [(ngModel)]="message" (keyup.ENTER)="sendMessage()">
+  </div>
+  <div class="actions">
+    <mat-icon>photo_camera</mat-icon>
+    <mat-icon>mic_outline</mat-icon>
+  </div>
+</div>

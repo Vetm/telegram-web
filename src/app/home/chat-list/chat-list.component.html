@@ -1,0 +1,16 @@
+<mat-list class="chat-history">
+  <mat-list-item *ngFor="let chat of cs.chatHistory" class="chat" (click)="c.changeCurrentChat(chat)" [routerLink]="'/chat/' + chat.id" [routerLinkActive]="'active'">
+    <div class="avatar">
+      <div class="photo-placeholder" [ngClass]="{'fade-out': (cs?.photos[chat.id] !== undefined)}" [ngStyle]="{'background-color': '#' + cg.generateColor(chat.id)}">{{chat.short}}</div>
+      <img mat-list-avatar *ngIf="cs?.photos[chat.id]" [src]="cs?.photos[chat.id]">
+    </div>
+    <div class="info mat-list-text">
+      <h4 mat-line>{{chat.title}}</h4>
+      <p mat-line><span class="out" *ngIf="chat.out">You: </span>{{chat.lastMessage}}</p>
+    </div>
+    <div class="status">
+      <p mat-line class="status">{{chat.time | shortDate}}</p>
+      <div mat-line class="count" [ngClass]="{'no-unread': (chat.unreadCount === 0)}"><span>{{chat.unreadCount}}</span></div>
+    </div>
+  </mat-list-item>
+</mat-list>

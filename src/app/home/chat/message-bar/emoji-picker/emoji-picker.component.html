@@ -1,0 +1,21 @@
+<div class="emoji-button" (mouseenter)="show()" (mouseleave)="hide(100)">
+  <mat-icon>tag_faces</mat-icon>
+</div>
+
+<div class="emoji-picker-wrapper" [@state]="state" (mouseenter)="show()" (mouseleave)="hide()">
+  <div class="emoji-picker">
+    <div class="emojis">
+      <div class="emoji" *ngFor="let emoji of emojis[currentCategory]" (click)="pickEmoji(emoji)">{{emoji.char}}</div>
+    </div>
+
+    <div class="category-select">
+      <span class="category" (click)="changeCategory('smileys')"><mat-icon>tag_faces</mat-icon></span>
+      <span class="category" (click)="changeCategory('animals')"><mat-icon>pets</mat-icon></span>
+      <span class="category" (click)="changeCategory('food')"><mat-icon>restaurant_menu</mat-icon></span>
+      <span class="category" (click)="changeCategory('travel')"><mat-icon>directions_car</mat-icon></span>
+      <span class="category" (click)="changeCategory('symbols')"><mat-icon>change_history</mat-icon></span>
+    </div>
+
+  </div>
+  <div class="spacer"></div>
+</div>

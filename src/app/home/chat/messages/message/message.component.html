@@ -1,0 +1,18 @@
+<div class="message" [ngClass]="{'self': message.self, 'peer': !message.self}">
+  <span class="content text" *ngIf="type === 'text'" [innerHtml]="message.message"></span>
+  <div class="content photo" *ngIf="type === 'photo'">
+    <div class="photo-inner" [ngStyle]="{'width': imageSize.width + 'px', 'height': imageSize.height + 'px'}" #photoInner>
+      <mat-spinner *ngIf="!photo"></mat-spinner>
+      <img [src]="photo" *ngIf="photo">
+    </div>
+  </div>
+  <span class="status-placeholder">
+    <span class="time">{{getTime(message.date) | shortDate}}</span>
+    <mat-icon>done</mat-icon>
+  </span>
+  <span class="status">
+    <span class="time">{{getTime(message.date) | shortDate}}</span>
+    <mat-icon *ngIf="read">done_all</mat-icon>
+    <mat-icon *ngIf="!read">done</mat-icon>
+  </span>
+</div>
